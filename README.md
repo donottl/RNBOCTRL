@@ -173,7 +173,7 @@ Input index *i* with *R* display rows appears in row `(i − 1) mod R` and colum
 
 ## Register the Teensy as OSC listener
 
-RNBO only forwards outport messages to registered listeners. Register the Teensy once (it stays registered, also after re-exports and reboots of the Pi), for example with [sendosc](https://github.com/yoggy/sendosc):
+RNBO only forwards outport messages to registered listeners. Register the Teensy once (it stays registered, also after re-exports and reboots of the Pi), for example with [sendosc](https://github.com/yoggy/sendosc) via mac terminal:
 
 ```
 sendosc <IP of the Raspberry Pi> 1234 /rnbo/listeners/add s <IP of the Teensy>:1234
