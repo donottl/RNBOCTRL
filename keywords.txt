@@ -1,0 +1,7 @@
+# Syntax colorint Map for RNBOCTRL library
+
+# Datatypes (KEYWORD1)
+RNBOCTRL    KEYWORD1
+RNBOParam   KEYWORD1
+RNBODisplay KEYWORD1
+RNBOError   KEYWORD1
