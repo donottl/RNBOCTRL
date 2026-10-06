@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="800" height="340" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">RNBOCTRL system overview</title>
+  <desc id="d">Input elements send user input to the Teensy 4.1 running RNBOCTRL, which sends parameter values to the OLED display and communicates with the Raspberry Pi running the RNBO patch via OSC over UDP port 1234 and OSCQuery over TCP port 5678. An optional external Max patch configures the controller via the Raspberry Pi.</desc>
+  <defs>
+    <marker id="end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2b2b2b"/>
+    </marker>
+  </defs>
+  <rect width="800" height="340" fill="#ffffff"/>
+
+  <!-- containers -->
+  <rect x="10" y="10" width="780" height="320" rx="10" fill="none" stroke="#6b6b6b" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="28" y="38" font-size="14" font-weight="600" fill="#2b2b2b">Controller system</text>
+  <rect x="24" y="108" width="476" height="206" rx="10" fill="#fafafa" stroke="#6b6b6b" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="42" y="134" font-size="14" font-weight="600" fill="#2b2b2b">Controller</text>
+
+  <!-- input elements -->
+  <rect x="40" y="156" width="150" height="52" rx="8" fill="#e8f0fe" stroke="#2b2b2b" stroke-width="1.5"/>
+  <text x="115" y="178" text-anchor="middle" font-size="14" font-weight="600" fill="#1f1f1f">Input elements</text>
+  <text x="115" y="196" text-anchor="middle" font-size="11.5" fill="#444">encoders, buttons, …</text>
+
+  <!-- display -->
+  <rect x="40" y="244" width="150" height="52" rx="8" fill="#e8f0fe" stroke="#2b2b2b" stroke-width="1.5"/>
+  <text x="115" y="266" text-anchor="middle" font-size="14" font-weight="600" fill="#1f1f1f">OLED display</text>
+  <text x="115" y="284" text-anchor="middle" font-size="11.5" fill="#444">U8g2 · I²C</text>
+
+  <!-- teensy -->
+  <rect x="310" y="170" width="160" height="110" rx="8" fill="#e6f4ea" stroke="#2b2b2b" stroke-width="1.5"/>
+  <text x="390" y="215" text-anchor="middle" font-size="15" font-weight="600" fill="#1f1f1f">Teensy 4.1</text>
+  <text x="390" y="236" text-anchor="middle" font-size="12" fill="#444">RNBOCTRL library</text>
+
+  <!-- raspberry pi -->
+  <rect x="650" y="170" width="130" height="110" rx="8" fill="#fff3e0" stroke="#2b2b2b" stroke-width="1.5"/>
+  <text x="715" y="215" text-anchor="middle" font-size="15" font-weight="600" fill="#1f1f1f">Raspberry Pi</text>
+  <text x="715" y="236" text-anchor="middle" font-size="12" fill="#444">RNBO patch</text>
+
+  <!-- external configuration -->
+  <rect x="600" y="44" width="180" height="52" rx="8" fill="#f3e8fd" stroke="#2b2b2b" stroke-width="1.5"/>
+  <text x="690" y="66" text-anchor="middle" font-size="14" font-weight="600" fill="#1f1f1f">External configuration</text>
+  <text x="690" y="84" text-anchor="middle" font-size="11.5" fill="#444">Max remote patch (optional)</text>
+
+  <!-- arrows: inputs / display -->
+  <line x1="190" y1="190" x2="308" y2="190" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#end)"/>
+  <text x="249" y="182" text-anchor="middle" font-size="12" fill="#2b2b2b">user input</text>
+  <line x1="310" y1="268" x2="192" y2="268" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#end)"/>
+  <text x="251" y="260" text-anchor="middle" font-size="12" fill="#2b2b2b">parameter values</text>
+
+  <!-- arrows: teensy <-> pi -->
+  <line x1="472" y1="206" x2="648" y2="206" stroke="#2b2b2b" stroke-width="1.5" marker-start="url(#end)" marker-end="url(#end)"/>
+  <text x="560" y="198" text-anchor="middle" font-size="12" fill="#2b2b2b">OSC · UDP 1234</text>
+  <line x1="648" y1="250" x2="472" y2="250" stroke="#2b2b2b" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#end)"/>
+  <text x="560" y="270" text-anchor="middle" font-size="12" fill="#2b2b2b">OSCQuery (JSON)</text>
+  <text x="560" y="285" text-anchor="middle" font-size="11" fill="#555">TCP 5678 · at start-up</text>
+
+  <!-- arrow: external <-> pi -->
+  <line x1="715" y1="98" x2="715" y2="168" stroke="#2b2b2b" stroke-width="1.5" marker-start="url(#end)" marker-end="url(#end)"/>
+  <text x="705" y="128" text-anchor="end" font-size="12" fill="#2b2b2b">controller</text>
+  <text x="705" y="143" text-anchor="end" font-size="12" fill="#2b2b2b">configuration</text>
+</svg>
